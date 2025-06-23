@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleinformática-VocaTech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>🖥️</span> VocaTech
+        </div>
+        <nav class="nav-links">
+            <a href="#" onclick="showHome()">Inicio</a>
+            <a href="#" onclick="showMainPage()">Materias</a>
+            <a href="#" onclick="showAdvicePage()">Sugerencias</a>
+            <a onclick="document.getElementById('loginModal').style.display='flex'">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <div class="content">
+    <h1>Teleinformática</h1>
+    <p>
+        Teleinformática es una disciplina que combina la telecomunicación y la informática. Se encarga del estudio, diseño, implementación y gestión de sistemas que permiten la transmisión de información entre computadoras y dispositivos a través de redes de comunicación (como internet, redes locales, redes móviles, etc.).
+    </p>
+
+    <h2>¿Para qué sirve?</h2>
+    <p>
+        Transmitir datos a distancia, como correos electrónicos, videollamadas o navegación web.
+        Diseñar redes de comunicación, como LAN, WAN o redes inalámbricas.
+        Asegurar la comunicación eficiente y segura entre sistemas distribuidos.
+        Implementar servicios en la nube, VPNs, servidores remotos, entre otros.
+    </p>
+
+    <div class="pdf-card">
+        <a href="Documentos/TeleInfo.pdf" target="_blank" class="pdf-card-link">
+            <h2>Guía de Teleinformática</h2>
+            <img src="Imagenes/Icon-TI.webp" alt="PDF icon">
+        </a>
+    </div>
+
+    <h2>Videos Recomendados</h2>
+    <div class="videos">
+        <div class="video-card">
+            <h3>Modelo OSI</h3>
+            <a href="https://www.youtube.com/watch?v=-QTNJws7PRg" target="_blank">
+            <img src="https://img.youtube.com/vi/-QTNJws7PRg/hqdefault.jpg" alt="Miniatura Clases y Objetos" width="100%" height="200">
+            </a>
+        </div>
+
+        <div class="video-card">
+            <h3>Importancia del modelo OSI</h3>
+            <a href="https://www.youtube.com/watch?v=O8SeYEFnBmQ" target="_blank">
+            <img src="https://img.youtube.com/vi/O8SeYEFnBmQ/hqdefault.jpg" alt="Miniatura Clases y Objetos" width="100%" height="200">
+            </a>
+        </div>
+
+        <div class="video-card">
+            <h3>Curso de Redes</h3>
+            <a href="https://www.youtube.com/watch?v=iNh-62Mf0O4" target="_blank">
+            <img src="https://img.youtube.com/vi/iNh-62Mf0O4/hqdefault.jpg" alt="Miniatura Clases y Objetos" width="100%" height="200">
+            </a>
+        </div>
+    </div>
+
+    <div class="back-button-container">
+        <a class="back-button" href="index.html?materias=true">Volver a Materias</a>
+    </div>
+
+    <footer class="footer">
+    <h3>Referencias</h3>
+    <ul class="footer-links">
+        <li><a href="https://profmatiasgarcia.com.ar/uploads/tutoriales/Redes-4ModelosDeReferencia.pdf" target="_blank"> García, M. (2008). Modelos de referencia.</a></li>
+        <li><a href="https://sandrabezisocor.wordpress.com/wp-content/uploads/2008/05/redes_de_computadoras.pdf" target="_blank">Bezi, S. (2005). Importancia del modelo OSI.</a></li>
+        <li><a href="https://aws.amazon.com/es/what-is/osi-model/" target="_blank">Amazon Web Services. (s. f.). ¿Qué es el modelo OSI? </a></li>
+    </ul>
+    <p> &copy; 2025 VocaTech. - Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>

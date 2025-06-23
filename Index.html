@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VocaTech</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <span>🖥️</span> VocaTech
+    </div>
+    <nav class="nav-links">
+      <a href="#" onclick="showHome()">Inicio</a>
+      <a href="#" onclick="showMainPage()">Materias</a>
+      <a href="#" onclick="showSuggestionsPage()">Sugerencias</a> <!-- Cambiado aquí -->
+      <a onclick="document.getElementById('loginModal').style.display='flex'">Iniciar sesión</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h1>Bienvenido a VocaTech</h1>
+    <p>Bienvenidos a nuestra plataforma de apoyo académico para estudiantes de informática en nivel medio superior.
+      Aquí encontrarás videos, ejercicios y explicaciones diseñadas por estudiantes como tú. ¿Te cuesta entender algún tema? ¿Buscas explicaciones claras, ejercicios resueltos y videos que realmente ayuden? ¡Estás en el lugar correcto!
+      Somos el grupo 4IM4 de la carrera de Informática el CECyT #14 y hemos creado este espacio para compartir recursos, resolver dudas y acompañarte en tu camino académico. Encontrarás contenido sobre diversas materias, desde lo más básico hasta temas más avanzados, todo explicado de forma sencilla y con ejemplos reales.
+      Explora, aprende a tu ritmo y, si necesitas ayuda, ¡aquí estamos!
+    </p>
+    <button class="button-explorer" onclick="showMainPage()">Explorar recursos</button>
+  </section>
+
+  <section class="main-page" id="mainPage" style="display: none;">
+    <h1>Materias Disponibles</h1>
+
+    <div class="subjects">
+        <div class="section-title">Carrera Informática</div>
+        <div class="buttons-group">
+            <a href="programacion.html"><button class="button--materias">Programación Orientada a Objetos</button></a>
+            <a href="Teleinfo.html"><button class="button--materias">Teleinformática</button></a>
+        </div>
+
+        <div class="section-title">Tronco Común</div>
+        <div class="buttons-group">
+            <a href="fisica.html"><button class="button--materias">Física II</button></a>
+            <a href="quimica.html"><button class="button--materias">Química II</button></a>
+            <a href="Conta.html"><button class="button--materias">Contabilidad II</button></a>
+            <a href="ingles.html"><button class="button--materias">Inglés IV</button></a>
+            <a href="Diferencial.html"><button class="button--materias">Cálculo Diferencial</button></a>
+            <a href="Derecho.html"><button class="button--materias">Derecho</button></a>
+            <a href="Financieros.html"><button class="button--materias">Cálculos Financieros</button></a>
+        </div>
+    </div>
+
+    <div class="section-title-prox">En desarrollo...</div>
+
+    <button class="back-button" onclick="showHome()">Volver a la página principal</button>
+  </section>
+
+  <!-- NUEVA SECCIÓN SUGERENCIAS -->
+  <section class="suggestions-page" id="suggestionsPage" style="display: none;">
+    <h1>¡Déjanos tus sugerencias!</h1>
+    <p>Tu opinión nos ayuda a mejorar esta plataforma. Puedes dejarnos comentarios, sugerencias o reportar errores.</p>
+
+    <form class="suggestion-form">
+      <textarea placeholder="Escribe aquí tus sugerencias..." required></textarea>
+      <button type="submit">Enviar sugerencia</button>
+    </form>
+
+    <button class="back-button" onclick="showHome()">Volver a la página principal</button>
+  </section>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
+      <h2>Iniciar sesión</h2>
+      <input type="text" placeholder="Correo o usuario">
+      <input type="password" placeholder="Contraseña">
+      <button>Entrar</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 VocaTech. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function showMainPage() {
+      document.getElementById('hero').style.display = 'none';
+      document.getElementById('mainPage').style.display = 'flex';
+      document.getElementById('suggestionsPage').style.display = 'none';
+    }
+
+    function showHome() {
+      document.getElementById('hero').style.display = 'flex';
+      document.getElementById('mainPage').style.display = 'none';
+      document.getElementById('suggestionsPage').style.display = 'none';
+    }
+
+    function showSuggestionsPage() {
+      document.getElementById('hero').style.display = 'none';
+      document.getElementById('mainPage').style.display = 'none';
+      document.getElementById('suggestionsPage').style.display = 'flex';
+    }
+
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('materias') === 'true') {
+        showMainPage();
+      }
+    };
+
+    // Para evitar que recargue al enviar (ya que no es funcional)
+    document.addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('¡Gracias por tu sugerencia!');
+    });
+  </script>
+
+</body>
+
+</html>
